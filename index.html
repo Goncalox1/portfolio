@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gonçalo Santos | Cibersegurança</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f1115;
+      color: #e2e8f0;
+    }
+    
+    .font-terminal {
+      font-family: 'Fira Code', monospace;
+    }
+
+    html {
+      scroll-padding-top: 5rem;
+    }
+
+    /* Scrollbar Personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f1115;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0891b2;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06b6d4;
+    }
+
+    /* Fundo Cyber Grid */
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden antialiased text-gray-300 relative">
+
+  <div class="fixed inset-0 z-[-1] bg-grid-pattern pointer-events-none"></div>
+
+  <nav class="fixed top-0 w-full z-50 bg-[#0f1115]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative">
+      <a href="#inicio" class="text-2xl font-extrabold text-white tracking-wider">
+        GS<span class="text-cyan-400">.</span>
+      </a>
+      
+      <div class="hidden md:flex gap-8 font-semibold text-sm">
+        <a href="#inicio" class="hover:text-cyan-400 transition">Início</a>
+        <a href="#sobre" class="hover:text-cyan-400 transition">Sobre Mim</a>
+        <a href="#experiencia" class="hover:text-cyan-400 transition">Experiência</a>
+        <a href="#projetos" class="hover:text-cyan-400 transition">Projetos & Certificados</a>
+        <a href="#contacto" class="hover:text-cyan-400 transition">Contactos</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0f1115] border-b border-gray-800 flex flex-col items-center py-6 space-y-6 font-semibold text-sm shadow-2xl md:hidden">
+        <a href="#inicio" class="mobile-link hover:text-cyan-400 transition">Início</a>
+        <a href="#sobre" class="mobile-link hover:text-cyan-400 transition">Sobre Mim</a>
+        <a href="#experiencia" class="mobile-link hover:text-cyan-400 transition">Experiência</a>
+        <a href="#projetos" class="mobile-link hover:text-cyan-400 transition">Projetos & Certificados</a>
+        <a href="#contacto" class="mobile-link hover:text-cyan-400 transition">Contactos</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="inicio" class="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+    <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl w-full" data-aos="fade-up">
+      <div class="text-center md:text-left order-2 md:order-1">
+        <p class="text-cyan-400 font-semibold tracking-wide mb-2">👋 Olá, o meu nome é</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-white leading-tight">
+          Gonçalo Santos
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-400 mb-6">
+          Estudante de <span class="text-cyan-400">Cibersegurança</span>
+        </h2>
+        <p class="text-lg text-gray-400 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+          Movido por uma paixão genuína pela tecnologia e proteção digital. Focado em aprender a construir, administrar e defender os sistemas de amanhã.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#contacto" class="bg-cyan-500 text-gray-900 px-8 py-3 rounded-lg font-bold hover:bg-cyan-400 transition duration-300 text-center shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+            Contacta-me
+          </a>
+          <a href="assets/Curriculo_Goncalo_Santos.pdf" target="_blank" class="border border-cyan-500 text-cyan-400 px-8 py-3 rounded-lg font-bold hover:bg-cyan-500 hover:text-gray-900 transition duration-300 text-center flex justify-center items-center gap-2">
+            <span>Download CV</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center order-1 md:order-2">
+        <div class="relative group">
+          <div class="absolute inset-0 bg-cyan-500 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition duration-500 animate-pulse"></div>
+          <img src="assets/fotoai.png" alt="Foto de Gonçalo" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-2 border-cyan-400 z-10 hover:scale-105 transition duration-500" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <a href="#sobre" aria-label="Scroll para baixo">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-500 hover:text-cyan-400 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section id="sobre" class="pt-24 pb-32 bg-[#14161a]/90 backdrop-blur-sm border-t border-gray-800 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        
+        <div class="w-full lg:w-5/12 flex justify-center" data-aos="fade-right">
+          <img src="assets/gifport.gif" alt="Animação de Tecnologia" class="w-80 lg:w-full max-w-md rounded-2xl border border-gray-800 shadow-[0_0_30px_rgba(6,182,212,0.1)] opacity-95 hover:border-cyan-500/50 transition duration-300" />
+        </div>
+
+        <div class="w-full lg:w-7/12" data-aos="fade-left">
+          <div class="flex items-center gap-4 mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Sobre Mim</h2>
+            <div class="h-px bg-cyan-500 flex-grow opacity-50"></div>
+          </div>
+          
+          <div class="space-y-4 text-gray-400 leading-relaxed text-lg mb-8">
+            <p>
+              Sou um jovem de 20 anos fascinado pelo mundo dos computadores. Concluí o <span class="text-white font-semibold">TGPSI</span> na Escola D. Pedro V e estou atualmente a frequentar o <span class="text-cyan-400 font-semibold">CTeSP em Cibersegurança no ISTEC</span>.
+            </p>
+            <p>
+              O meu objetivo é perceber como as coisas quebram para saber como as proteger. Tenho fortes bases no diagnóstico e resolução de problemas de hardware e software, assim como na administração de sistemas operativos (Windows e Linux) e redes informáticas. Além disso, domino fluentemente a língua Inglesa (C1/C2).
+            </p>
+            <p>
+              Fora dos ecrãs, encontro o meu equilíbrio no tatame a praticar <span class="text-white font-semibold">artes marciais</span>, a ler um bom livro ou a ouvir música clássica.
+            </p>
+          </div>
+
+          <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800">
+            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span>🛠️</span> A minha Toolbox
+            </h3>
+            <p class="text-sm text-gray-500 mb-4">Linguagens, Bases de Dados e Sistemas que utilizo no meu dia a dia:</p>
+            <img src="https://skillicons.dev/icons?i=linux,windows,python,java,cs,mysql,html,css,js,php&theme=dark" alt="My Skills" class="hover:scale-105 transition-transform duration-300 w-full max-w-[400px]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia" class="pt-24 pb-32 bg-[#0f1115]/90 backdrop-blur-sm border-t border-gray-800 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="flex items-center gap-4 mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Experiência</h2>
+        <div class="h-px bg-cyan-500 flex-grow opacity-50"></div>
+      </div>
+
+      <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-500/20 before:via-gray-700 before:to-transparent">
+        
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 group-hover:border-cyan-500 group-hover:bg-cyan-500/20 text-cyan-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_10px_rgba(6,182,212,0.2)] transition duration-300 z-10">
+            💼
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#14161a] p-6 rounded-xl border border-gray-800 shadow-xl group-hover:border-cyan-500/30 hover:-translate-y-1 transition duration-300">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+              <h3 class="font-bold text-xl text-white">Assistente de Vendas</h3>
+              <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full mt-2 sm:mt-0 border border-cyan-500/20">Set 2025 - Presente</span>
+            </div>
+            <h4 class="text-gray-400 font-semibold mb-4">Worten Portugal (Colombo)</h4>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Trabalho num ambiente de ritmo acelerado focado no atendimento ao cliente e resolução de problemas tecnológicos em tempo real. Laboratório perfeito para desenvolvimento de soft skills, comunicação clara de "tecniquês" e gestão de pressão em equipa.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-gray-900 group-hover:border-cyan-500 group-hover:bg-cyan-500/20 text-cyan-500 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg transition duration-300 z-10">
+            🔧
+          </div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#14161a] p-6 rounded-xl border border-gray-800 shadow-xl group-hover:border-cyan-500/30 hover:-translate-y-1 transition duration-300">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+              <h3 class="font-bold text-xl text-white">Técnico de Assistência Informática</h3>
+              <span class="text-xs font-semibold text-gray-400 bg-gray-800 px-3 py-1 rounded-full mt-2 sm:mt-0 border border-gray-700">Fev 2025 - Jul 2025</span>
+            </div>
+            <h4 class="text-gray-400 font-semibold mb-4">MicroCAOS (Estágio Curricular)</h4>
+            <ul class="text-sm text-gray-500 leading-relaxed list-disc list-inside space-y-1">
+              <li>Instalação e configuração de SOs (Windows, Linux).</li>
+              <li>Montagem, manutenção e reparação de hardware.</li>
+              <li>Diagnóstico e resolução de problemas técnicos e de redes.</li>
+              <li>Apoio ao cliente em soluções tecnológicas.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="pt-24 pb-32 bg-[#14161a]/90 backdrop-blur-sm border-t border-gray-800 relative overflow-hidden">
+    <div class="absolute top-1/3 right-0 -mr-40 w-96 h-96 bg-cyan-900 rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+    
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      
+      <div class="mb-20" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Projetos</h2>
+          <div class="h-px bg-cyan-500 flex-grow opacity-50"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="bg-[#0f1115] border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-between text-center h-[320px] relative group overflow-hidden shadow-lg hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div class="flex flex-col items-center justify-center flex-grow">
+              <div class="w-14 h-14 border-4 border-gray-800 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
+              <h3 class="text-lg font-bold text-gray-300 mb-2">A cozinhar código...</h3>
+              <p class="text-sm text-gray-500">Projeto de Cibersegurança em desenvolvimento. Em breve disponível no GitHub.</p>
+            </div>
+            <button disabled class="w-full mt-4 py-2 bg-gray-900 border border-gray-700 text-gray-500 rounded font-terminal text-sm opacity-50 cursor-not-allowed transition">
+              <span class="text-cyan-700">></span> Em processamento<span class="cursor-blink">_</span>
+            </button>
+          </div>
+          
+          <div class="bg-[#0f1115] border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-between text-center h-[320px] relative group overflow-hidden shadow-lg hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div class="flex flex-col items-center justify-center flex-grow">
+              <div class="w-14 h-14 border-4 border-gray-800 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
+              <h3 class="text-lg font-bold text-gray-300 mb-2">A compilar laboratório...</h3>
+              <p class="text-sm text-gray-500">A preparar o ambiente de testes de redes e segurança. Novidades para breve.</p>
+            </div>
+            <button disabled class="w-full mt-4 py-2 bg-gray-900 border border-gray-700 text-gray-500 rounded font-terminal text-sm opacity-50 cursor-not-allowed transition">
+              <span class="text-cyan-700">></span> Em processamento<span class="cursor-blink">_</span>
+            </button>
+          </div>
+          
+          <div class="bg-[#0f1115] border border-gray-800 rounded-xl p-8 flex flex-col items-center justify-between text-center h-[320px] relative group overflow-hidden shadow-lg hover:border-cyan-500 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300 md:flex">
+            <div class="flex flex-col items-center justify-center flex-grow">
+              <div class="w-14 h-14 border-4 border-gray-800 border-t-cyan-500 rounded-full animate-spin mb-4"></div>
+              <h3 class="text-lg font-bold text-gray-300 mb-2">A configurar TryHackMe...</h3>
+              <p class="text-sm text-gray-500">A preparar a integração das pontuações dos laboratórios práticos e desafios CTF.</p>
+            </div>
+            <button disabled class="w-full mt-4 py-2 bg-gray-900 border border-gray-700 text-gray-500 rounded font-terminal text-sm opacity-50 cursor-not-allowed transition">
+              <span class="text-cyan-700">></span> Em processamento<span class="cursor-blink">_</span>
+            </button>
+          </div>
+          
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-4 mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Certificações</h2>
+          <div class="h-px bg-cyan-500 flex-grow opacity-50"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          
+          <div class="bg-[#0f1115] border border-gray-800 rounded-xl p-6 flex items-center gap-6 relative overflow-hidden group hover:border-cyan-500/50 hover:bg-gray-900/50 transition duration-300">
+            <div class="w-16 h-16 bg-gray-900 rounded-lg border border-gray-800 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <div class="w-8 h-8 border-4 border-gray-800 border-t-cyan-500 rounded-full animate-spin"></div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-lg font-bold text-gray-400 group-hover:text-cyan-400 transition mb-1">A carregar certificação...</h3>
+              <p class="text-xs text-gray-500">Estudos em andamento. A aguardar conclusão.</p>
+            </div>
+            <button disabled class="hidden sm:block px-3 py-1.5 bg-gray-900 border border-gray-800 text-gray-600 rounded cursor-not-allowed font-terminal text-xs">
+              > Pendente_
+            </button>
+          </div>
+
+          <div class="bg-[#0f1115] border border-gray-800 rounded-xl p-6 flex items-center gap-6 relative overflow-hidden group hover:border-cyan-500/50 hover:bg-gray-900/50 transition duration-300">
+            <div class="w-16 h-16 bg-gray-900 rounded-lg border border-gray-800 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <div class="w-8 h-8 border-4 border-gray-800 border-t-cyan-500 rounded-full animate-spin"></div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-lg font-bold text-gray-400 group-hover:text-cyan-400 transition mb-1">A obter credenciais...</h3>
+              <p class="text-xs text-gray-500">A preparar o início da formação na área.</p>
+            </div>
+             <button disabled class="hidden sm:block px-3 py-1.5 bg-gray-900 border border-gray-800 text-gray-600 rounded cursor-not-allowed font-terminal text-xs">
+              > Blocked_
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contacto" class="py-24 relative overflow-hidden bg-[#0f1115]/90 backdrop-blur-sm border-t border-gray-800">
+    <div class="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-cyan-900 rounded-full blur-[120px] opacity-20"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10" data-aos="fade-up">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Vamos conversar?</h2>
+        <p class="text-gray-400 text-lg">Seja para projetos, partilha de ideias ou oportunidades, a minha caixa de entrada está aberta.</p>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-8 bg-gray-900/80 p-8 rounded-2xl border border-gray-800 shadow-2xl backdrop-blur-md">
+        
+        <div class="md:col-span-2 flex flex-col justify-center space-y-6">
+          <a href="mailto:goncalofsantos13@gmail.com" class="flex items-center gap-4 group">
+            <div class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-cyan-500 group-hover:text-gray-900 transition duration-300 shadow-lg">
+              <span class="text-xl">📧</span>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Email</p>
+              <p class="font-semibold text-white group-hover:text-cyan-400 transition">goncalofsantos13@gmail.com</p>
+            </div>
+          </a>
+
+          <div class="flex items-center gap-4 group cursor-default">
+            <div class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full text-gray-300 transition duration-300 shadow-lg">
+              <span class="text-xl">📱</span>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Telefone</p>
+              <p class="font-semibold text-white">(+351) 934 429 396</p>
+            </div>
+          </div>
+          
+          <a href="https://www.linkedin.com/in/gonçalo-santos-114207325" target="_blank" class="flex items-center gap-4 group">
+            <div class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-cyan-500 group-hover:text-gray-900 transition duration-300 shadow-lg">
+              <span class="text-xl">💼</span>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">LinkedIn</p>
+              <p class="font-semibold text-white group-hover:text-cyan-400 transition">Conectar no LinkedIn</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/Goncalox1" target="_blank" class="flex items-center gap-4 group">
+            <div class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-cyan-500 group-hover:text-gray-900 transition duration-300 shadow-lg">
+              <span class="text-xl">🐙</span>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">GitHub</p>
+              <p class="font-semibold text-white group-hover:text-cyan-400 transition">Ver Projetos</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="md:col-span-3 bg-[#0f1115] p-6 rounded-xl border border-gray-800">
+          <form action="https://formspree.io/f/xgvzbyao" method="POST" class="space-y-4">
+            <div>
+              <label for="email" class="block mb-1 text-sm font-semibold text-gray-300">O teu email</label>
+              <input type="email" name="email" id="email" required placeholder="exemplo@email.com" class="w-full px-4 py-3 rounded-lg bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition" />
+            </div>
+            <div>
+              <label for="message" class="block mb-1 text-sm font-semibold text-gray-300">Mensagem</label>
+              <textarea name="message" id="message" rows="4" required placeholder="Escreve a tua mensagem aqui..." class="w-full px-4 py-3 rounded-lg bg-gray-900/50 text-white border border-gray-700 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold px-6 py-3 rounded-lg transition duration-300 shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] flex justify-center items-center gap-2">
+              <span>Enviar Payload</span> <span class="text-xl">🚀</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-sm text-gray-500 border-t border-gray-800 bg-[#0f1115] z-10 relative">
+    <p>© 2026 Gonçalo Santos. Defendendo sistemas, uma linha de código de cada vez.</p>
+  </footer>
+
+  <script>
+    // Inicializar animações de scroll
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Lógica do Menu Mobile
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Fechar menu ao clicar num link
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
